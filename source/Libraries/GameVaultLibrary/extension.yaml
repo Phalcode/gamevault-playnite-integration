@@ -1,0 +1,7 @@
+﻿Id: GameVault_Library
+Name: GameVault library integration
+Author: Zallist
+Version: 0.1
+Module: GameVaultLibrary.dll
+Type: GameLibrary
+Icon: icon.png

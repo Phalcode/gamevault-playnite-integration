@@ -1,0 +1,11 @@
+﻿﻿AddonId: GameVault_Library
+IconUrl: https://github.com/Zallist/gamevault-playnite-addon/raw/master/source/Libraries/GameVaultLibrary/icon.png
+Type: GameLibrary
+InstallerManifestUrl: https://github.com/Zallist/gamevault-playnite-addon/raw/master/manifests/GameVault_Library.yaml
+ShortDescription: Imports games from GameVault.
+Description: Imports both installed and uninstalled games from a configured GameVault backend instance.
+Name: GameVault library integration
+Author: Zallist
+Links:
+    Website: https://github.com/Zallist/gamevault-playnite-addon/
+SourceUrl: https://github.com/Zallist/gamevault-playnite-addon/
