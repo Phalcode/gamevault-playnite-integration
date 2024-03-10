@@ -23,7 +23,7 @@ namespace GameVaultLibrary
         public string Username { get => username; set => SetValue(ref username, value); }
 
         [DontSerialize, System.Xml.Serialization.XmlIgnore]
-        public string Password { get; set; }
+        public string Password { get; set; } = "";
 
         public string Version { get => version; set => SetValue(ref version, value); }
 

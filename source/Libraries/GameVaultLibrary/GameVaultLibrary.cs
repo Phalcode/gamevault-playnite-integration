@@ -24,7 +24,7 @@ namespace GameVaultLibrary
         public override Guid Id { get; } = Guid.Parse("fab8be77-18ab-4e6c-ad3d-89097b492d74");
 
         // Change to something more appropriate
-        public override string Name { get; } = "GameVault library integration";
+        public override string Name { get; } = "GameVault";
 
         public override string LibraryIcon { get; } = GameVaultLibraryClient.IconPath;
 
@@ -103,7 +103,6 @@ namespace GameVaultLibrary
                 client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("Playnite", API.Instance.ApplicationInfo.ApplicationVersion.ToString()));
 
                 client.DefaultRequestHeaders.Add("X-Playnite-PluginId", Id.ToString());
-                client.DefaultRequestHeaders.Add("X-Playnite-PluginName", Name);
                 client.DefaultRequestHeaders.Add("X-Playnite-PluginVersion", settings.Settings.Version);
 
                 var authenticationString = $"{settings.Settings.Username}:{settings.Settings.Password}";
@@ -161,6 +160,8 @@ namespace GameVaultLibrary
                         Version = serverGame.version,
                         InstallSize = serverGame.size,
                     };
+
+                    gameMetadata.Platforms = new HashSet<MetadataProperty> { new MetadataSpecProperty("pc_windows") };
 
                     gameMetadatas.Add(gameMetadata);
                 }
