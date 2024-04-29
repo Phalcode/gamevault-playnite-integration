@@ -15,7 +15,7 @@ namespace GameVaultLibrary.Contollers
 
         public GameVaultUninstallController(Game game, GameVaultLibraryClient client) : base(game)
         {
-            this.Name = "Uninstall using GameVault";
+            this.Name = "Uninstall via GameVault";
             this.Client = client;
         }
 

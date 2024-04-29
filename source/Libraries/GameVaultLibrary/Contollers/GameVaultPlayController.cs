@@ -18,7 +18,7 @@ namespace GameVaultLibrary.Contollers
 
         public GameVaultPlayController(Game game, GameVaultLibraryClient client) : base(game)
         {
-            this.Name = "Play using GameVault";
+            this.Name = "Play via GameVault";
             this.Client = client;
         }
 

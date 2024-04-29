@@ -15,7 +15,7 @@ namespace GameVaultLibrary.Contollers
 
         public GameVaultInstallController(Game game, GameVaultLibraryClient client) : base(game)
         {
-            this.Name = "Install using GameVault";
+            this.Name = "Install via GameVault";
             this.Client = client;
         }
 
