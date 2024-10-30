@@ -1,6 +1,6 @@
 # GameVault Playnite Integration
 
-This Playnite extension allows you to integrate GameVault with Playnite using GameVault Plus’s exclusive CLI and URI interface.
+This Playnite extension allows you to integrate GameVault with Playnite using GameVault Plus’s exclusive CLI and URI interface. It won't work if you are not subscribed to GameVault+.
 
 ## Acknowledgments
 

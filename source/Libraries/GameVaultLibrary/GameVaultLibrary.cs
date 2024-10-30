@@ -101,6 +101,7 @@ namespace GameVaultLibrary
             using (HttpClient client = new HttpClient() { MaxResponseContentBufferSize = int.MaxValue - 1, Timeout = TimeSpan.FromSeconds(60) })
             {
                 client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("Playnite", API.Instance.ApplicationInfo.ApplicationVersion.ToString()));
+                client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("GameVaultLibraryExtension", settings.Settings.Version));
 
                 client.DefaultRequestHeaders.Add("X-Playnite-PluginId", Id.ToString());
                 client.DefaultRequestHeaders.Add("X-Playnite-PluginVersion", settings.Settings.Version);
@@ -113,16 +114,16 @@ namespace GameVaultLibrary
 
                 try
                 {
-                    response = await client.GetAsync($"{settings.Settings.ServerUrl}/api/games?limit=0", args.CancelToken);
+                    response = await client.GetAsync($"{settings.Settings.ServerUrl}/api/games?limit=-1", args.CancelToken);
                 }
-                catch (Exception ex) 
-                { 
+                catch (Exception ex)
+                {
                     API.Instance.Dialogs.ShowMessage($"Error: {ex}", "GameVault Import Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                     return null;
                 }
 
-                string content = "Unknown error";
-                
+                string content = "Unknown Error";
+
                 try
                 {
                     content = await response.Content?.ReadAsStringAsync();
@@ -182,8 +183,8 @@ namespace GameVaultLibrary
                             gameMetadata.IsInstalled = installed.Result;
                     }
                 }
-                catch (Exception ex) 
-                { 
+                catch (Exception ex)
+                {
                     API.Instance.Dialogs.ShowMessage($"Error checking install status: {ex}", "GameVault Import Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                 }
             }
