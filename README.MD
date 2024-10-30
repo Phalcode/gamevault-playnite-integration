@@ -12,7 +12,6 @@ This Playnite extension allows you to integrate GameVault with Playnite using [G
    - Enter your GameVault user credentials.
 4. To sync your library, select `Update Game Library -> GameVault`.
 
-This structure should make each step clearer and more user-friendly! Let me know if you’d like further adjustments.
 ## Acknowledgments
 
 - Special thanks to [@Zallist](https://github.com/Zallist) for originally developing this integration.
