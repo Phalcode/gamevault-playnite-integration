@@ -1,7 +1,20 @@
 # GameVault Playnite Integration
 
-This Playnite Extension adds the ability to interact with GameVault through its GameVault Plus exclusive CLI & URI interface.
+This Playnite extension allows you to integrate GameVault with Playnite using GameVault Plus’s exclusive CLI and URI interface.
 
-## Special Thanks
+## Acknowledgments
 
-- [@Zallist](https://github.com/Zallist) - For originally authoring this integration
+- Special thanks to [@Zallist](https://github.com/Zallist) for originally developing this integration.
+
+## Development Setup
+
+To set up this project for development:
+
+1. Initialize submodules:
+   ```bash
+   git submodule update --init
+   ```
+2. Restore NuGet packages.
+3. Install or restore the Playnite SDK Extension via NuGet.
+4. Build a release version.
+5. In Playnite, navigate to `Settings -> For Developers`, then click `+` to add the `GameVaultLibrary` folder as a custom extension. 
