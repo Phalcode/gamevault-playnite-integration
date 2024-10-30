@@ -5,7 +5,7 @@ InstallerManifestUrl: https://raw.githubusercontent.com/Phalcode/gamevault-playn
 ShortDescription: Imports games from GameVault.
 Description: Imports Games from a configured GameVault Backend instance.
 Name: GameVault Playnite Integration
-Author: Zallist
+Author: Phalcode
 Links:
     Website: https://github.com/Phalcode/gamevault-playnite-integration/
 SourceUrl: https://github.com/Phalcode/gamevault-playnite-integration/
