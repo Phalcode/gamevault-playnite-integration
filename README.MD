@@ -1,7 +1,18 @@
 # GameVault Playnite Integration
 
-This Playnite extension allows you to integrate GameVault with Playnite using GameVault Plus�s exclusive CLI and URI interface. It won't work if you are not subscribed to GameVault+.
+This Playnite extension allows you to integrate GameVault with Playnite using [GameVault+](https://gamevau.lt/gamevault-plus)’s exclusive CLI and URI interface. It won't work if you are not subscribed to [GameVault+](https://gamevau.lt/gamevault-plus).
 
+## Usage
+
+1. [Set Up GameVault Plus in your GameVault Client](https://gamevau.lt/docs/gamevault-plus/introduction#get-started).
+2. Install the latest version of this extension using Playnite's Addon Browser or by adding the `.pext` file from the Releases.
+3. Configure the integration in Playnite:
+   - Go to `Library -> Configure Integrations... -> GameVault`.
+   - Enter your GameVault server URL (include `http://` or `https://`).
+   - Enter your GameVault user credentials.
+4. To sync your library, select `Update Game Library -> GameVault`.
+
+This structure should make each step clearer and more user-friendly! Let me know if you’d like further adjustments.
 ## Acknowledgments
 
 - Special thanks to [@Zallist](https://github.com/Zallist) for originally developing this integration.
