@@ -27,4 +27,15 @@ To set up this project for development:
 2. Restore NuGet packages.
 3. Install or restore the Playnite SDK Extension via NuGet.
 4. Build a release version.
-5. In Playnite, navigate to `Settings -> For Developers`, then click `+` to add the built `GameVaultLibrary` folder as a custom extension. 
+5. In Playnite, navigate to `Settings -> For Developers`, then click `Add` to add the built `GameVaultLibrary` folder inside `bin` as a custom extension. 
+
+## Releasing
+
+1. Update the application version in the sources.
+2. Build the extension.
+3. Package the extension using the Playnite Toolbox from the included Playnite submodule.
+4. Create a new release on GitHub:
+   - Create the corresponding GitHub tag.
+   - Add a changelog in the release notes.
+   - Upload the `.pext` file and copy its link.
+5. Add a new entry in the [manifest file](manifests/GameVault_Library.yaml).
