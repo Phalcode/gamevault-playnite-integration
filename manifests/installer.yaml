@@ -6,3 +6,10 @@ Packages:
     PackageUrl: https://github.com/Phalcode/gamevault-playnite-integration/releases/download/1.0/GameVault_fab8be77-18ab-4e6c-ad3d-89097b492d74_1_0.pext
     Changelog:
       - Initial Release
+  - Version: 1.1
+    RequiredApiVersion: 6.11.0
+    ReleaseDate: 2025-02-25
+    PackageUrl: https://github.com/Phalcode/gamevault-playnite-integration/releases/download/1.1/GameVault_fab8be77-18ab-4e6c-ad3d-89097b492d74_1_1.pext
+    Changelog:
+      - "Bug fix: Installation status not found on gamevault microsoft store version"
+
