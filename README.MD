@@ -34,6 +34,7 @@ To set up this project for development:
 1. Update the application version in the sources.
 2. Build the extension.
 3. Package the extension using the Playnite Toolbox from the included Playnite submodule.
+   ``.\Toolbox.exe pack "`Path\TO\gamevault-playnite-integration\source\Libraries\GameVaultLibrary" "."``
 4. Create a new release on GitHub:
    - Create the corresponding GitHub tag.
    - Add a changelog in the release notes.
