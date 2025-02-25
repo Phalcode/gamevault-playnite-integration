@@ -38,4 +38,4 @@ To set up this project for development:
    - Create the corresponding GitHub tag.
    - Add a changelog in the release notes.
    - Upload the `.pext` file and copy its link.
-5. Add a new entry in the [manifest file](manifests/GameVault_Library.yaml).
+5. Add a new entry in the [manifest file](manifests/installer.yaml).
