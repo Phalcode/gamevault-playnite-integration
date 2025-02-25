@@ -25,14 +25,52 @@ namespace GameVaultLibrary
 
         private static readonly ILogger logger = LogManager.GetLogger(nameof(GameVaultLibraryClient));
 
-        // Can't check if installed since it's a winexe app installed via microsoft store
-        //public override bool IsInstalled => Playnite.Common.Programs.GetUnistallProgramsList().Any(p => StringComparer.OrdinalIgnoreCase.Equals(p.DisplayName, "GameVault"));
+        private bool? isInstalled;
+
         public override bool IsInstalled
         {
             get
             {
-                var executablePath = GetExecutablePath();
-                return !string.IsNullOrEmpty(executablePath) && File.Exists(executablePath);
+                if (isInstalled.HasValue)
+                    return isInstalled.Value;
+
+                isInstalled = CheckInstallation();
+                return isInstalled.Value;
+            }
+        }
+        private bool CheckInstallation()
+        {
+            // Check GitHub version
+            string executablePath = GetExecutablePath();
+            if (!string.IsNullOrEmpty(executablePath) && File.Exists(executablePath))
+                return true;
+
+            // Check Microsoft Store version
+            return IsMicrosoftStoreAppInstalled("Phalcode.174950BD81C41");
+        }
+        private bool IsMicrosoftStoreAppInstalled(string packageName)
+        {
+            try
+            {
+                using (Process process = new Process())
+                {
+                    process.StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "powershell",
+                        Arguments = $"Get-AppxPackage -Name {packageName}",
+                        RedirectStandardOutput = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+                    process.Start();
+                    string output = process.StandardOutput.ReadToEnd();
+                    process.WaitForExit();
+                    return !string.IsNullOrWhiteSpace(output);
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -182,7 +220,7 @@ namespace GameVaultLibrary
 
             return match.Groups[1].Value;
         }
-        
+
         public void OpenClient(bool minimized) => Playnite.Common.ProcessStarter.StartUrl($"gamevault://show?minimized={minimized}");
         public void StartGame(string gameId) => Playnite.Common.ProcessStarter.StartUrl($"gamevault://start?gameid={gameId}");
         public void InstallGame(string gameId) => Playnite.Common.ProcessStarter.StartUrl($"gamevault://install?gameid={gameId}");
